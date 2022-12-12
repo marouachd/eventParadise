@@ -33,10 +33,10 @@
             <div class="row my-3">
                 <div class="col-md-4 position-relative">
 
-                    <label for="nom" class="form-label">Nom</label>
-                    <input name="nom" type="text" class="form-control" id="nom" minlength="1" maxlength="255"
+                    <label for="name" class="form-label">Nom</label>
+                    <input name="name" type="text" class="form-control" id="name" minlength="1" maxlength="255"
                         data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top" required>
-                    <div id="namehelp" class="form-text">Nom de l'évenement.</div>
+                    <div id="helpname" class="form-text">Nom de l'évenement.</div>
 
                 </div>
                 <div class="col-md-4 position-relative">
@@ -44,7 +44,7 @@
                     <label for="date" class="form-label">Date</label>
                     <input name="date" class="form-control pb-0" type="date" id="date" required>
 
-                    <div id="datehelp" class="form-text">Date de l'évenement.</div>
+                    <div id="helpdate" class="form-text">Date de l'évenement.</div>
 
                 </div>
                 <div class="col-md-4 position-relative">
@@ -57,7 +57,7 @@
                         <option value="3">Marseille</option>
                     </select>
 
-                    <div id="lieuhelp" class="form-text">Lieu de l'évenement.</div>
+                    <div id="helplieu" class="form-text">Lieu de l'évenement.</div>
                 </div>
             </div>
 
@@ -71,7 +71,7 @@
                         <option value="2">Ressources humaines</option>
                         <option value="3">Tech</option>
                     </select>
-                    <div id="themehelp" class="form-text">Thème de l'évenement.</div>
+                    <div id="helptheme" class="form-text">Thème de l'évenement.</div>
                 </div>
 
 
@@ -84,7 +84,7 @@
                             aria-describedby="basic-addon1" id="tarif" min="1" required>
                     </div>
 
-                    <div id="tarifhelp" class="form-text">Tarif journalier de l'évenement.</div>
+                    <div id="helptarif" class="form-text">Tarif journalier de l'évenement.</div>
                 </div>
             </div>
 
@@ -94,7 +94,7 @@
                 <div class="form-floating position-relative">
                     <textarea name="description" class="form-control" id="description" style="height: 100px"
                         minlength="1" maxlength="1000" required></textarea>
-                    <div id="descriptionhelp" class="form-text">Description de l'évenement.</div>
+                    <div id="helpdescription" class="form-text">Description de l'évenement.</div>
                 </div>
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">

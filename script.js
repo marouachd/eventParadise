@@ -6,13 +6,26 @@ for (const element of elements) { // for(String str: strings) // boucle
     const id = element.id;
     if (type != "submit") {
         element.addEventListener("invalid", (event) => { // chaque itération il ajoute un ecouteur de type 'invalide' on peut mettre type click
-            const helpText = document.getElementById(`${id}`);
+            const helpText = document.getElementById(`help${id}`);
 
             element.classList.add("is-invalid");
             helpText.classList.add("text-danger");
 
+            element.addEventListener("change", (event) => {
+                element.classList.remove("is-invalid");
+                element.classList.add("is-valid");
+                helpText.classList.remove("text-danger");
+            });
+
+
 
         });
+
+
+
+
+
+
 
 
 
