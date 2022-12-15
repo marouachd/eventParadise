@@ -6,12 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Paradise</title>
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"
         defer></script>
+
+    <script defer src="./messages.js" defer></script>
+    <script defer src="./toaster.js"></script>
+    <script src="./script.js" defer></script>
+
 </head>
 
 <body>
@@ -35,7 +41,7 @@
 
                     <label for="name" class="form-label">Nom</label>
                     <input name="name" type="text" class="form-control" id="name" minlength="1" maxlength="255"
-                        data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top" required>
+                        required>
                     <div id="helpname" class="form-text">Nom de l'évenement.</div>
 
                 </div>
@@ -61,7 +67,6 @@
                 </div>
             </div>
 
-
             <div class="row">
                 <div class="col-md-8 position-relative">
                     <label for="theme" class="form-label">Thème</label>
@@ -81,7 +86,7 @@
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">€</span>
                         <input name="tarif" type="number" class="form-control" aria-label="Tarif"
-                            aria-describedby="basic-addon1" id="tarif" min="0.01" required>
+                            aria-describedby="basic-addon1" id="tarif" min="1" required>
                     </div>
 
                     <div id="helptarif" class="form-text">Tarif journalier de l'évenement.</div>
@@ -89,7 +94,7 @@
             </div>
 
 
-            <div class="row">
+            <div class="row my-3">
                 <label for="description" type="texte" class="form-label">Description</label>
                 <div class="form-floating position-relative">
                     <textarea name="description" class="form-control" id="description" style="height: 100px"
@@ -101,7 +106,18 @@
                     <button class="btn btn-primary  my-2" type="submit">Sauvegarder</button>
                 </div>
             </div>
+
+
+            <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-body">
+                    Événement créé avec succès.
+                    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+            </div>
+
         </form>
+
     </main>
 
 
