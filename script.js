@@ -29,6 +29,7 @@ const options = {
 for (const element of elements) { // for(String str: strings) // boucle
     const type = element.type;
     const id = element.id;
+
     const helpText = document.getElementById(`help${id}`);
     const tarif = document.getElementById("tarif");
 
@@ -38,6 +39,7 @@ for (const element of elements) { // for(String str: strings) // boucle
     if (type != "submit") {
         element.addEventListener("invalid", (event) => { // chaque itération il ajoute un ecouteur de type 'invalide' on peut mettre type click, change, input, keyup
 
+            event.preventDefault();
             element.classList.add("is-invalid");
             helpText.classList.add("text-danger");
 
