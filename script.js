@@ -48,9 +48,9 @@ for (const element of elements) { // for(String str: strings) // boucle
 
             if (element.validity.valueMissing) {
                 message = options.title;
-            } else if (date.validity.rangeUnderflow) {
+            } else if (element.id == "date" && element.validity.rangeUnderflow) {
                 message = messageError.date;
-            } else if (tarif.validity.rangeUnderflow) {
+            } else if (element.id == "tarif" && element.validity.rangeUnderflow) {
                 message = messageError.tarif;
             } else { console.log("you are smart!") }
 
@@ -78,6 +78,18 @@ for (const element of elements) { // for(String str: strings) // boucle
         });
 
     }
+
+    const toaster = document.getElementById("toast");
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const toast = new bootstrap.Toast(toaster);
+        toast.show();
+        event.target.reset();
+        element.classList.remove("is-valid");
+        helpText.classList.remove("text-success");
+
+    });
 
 }
 
