@@ -32,8 +32,7 @@ for (const element of elements) { // for(String str: strings) // boucle
 
     const helpText = document.getElementById(`help${id}`);
 
-    element.setAttribute("data-bs-toggle", "tooltip");
-    element.setAttribute("data-bs-custom-class", "custom-tooltip");
+
 
     if (type != "submit") {
         element.addEventListener("invalid", (event) => { // chaque itération il ajoute un ecouteur de type 'invalide' on peut mettre type click, change, input, keyup
