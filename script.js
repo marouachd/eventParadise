@@ -31,7 +31,6 @@ for (const element of elements) { // for(String str: strings) // boucle
     const id = element.id;
 
     const helpText = document.getElementById(`help${id}`);
-    const tarif = document.getElementById("tarif");
 
     element.setAttribute("data-bs-toggle", "tooltip");
     element.setAttribute("data-bs-custom-class", "custom-tooltip");
@@ -48,13 +47,17 @@ for (const element of elements) { // for(String str: strings) // boucle
 
             if (element.validity.valueMissing) {
                 message = options.title;
-            } else if (element.id == "date" && element.validity.rangeUnderflow) {
-                message = messageError.date;
-            } else if (element.id == "tarif" && element.validity.rangeUnderflow) {
-                message = messageError.tarif;
-            } else { console.log("you are smart!") }
+            } else if (element.validity.rangeUnderflow) {
+                if (element.id == "date") {
+                    message = messageError.date;
+                } else if (element.id == "tarif") {
+                    message = messageError.tarif;
+                } else { console.log("you are smart!") }
 
-            tooltip.setContent({ '.tooltip-inner': message })
+                tooltip.setContent({ '.tooltip-inner': message });
+
+            }
+
         });
 
 
@@ -74,10 +77,14 @@ for (const element of elements) { // for(String str: strings) // boucle
                 element.classList.add("is-invalid");
                 helpText.classList.remove("text-success");
                 helpText.classList.add("text-danger");
+                const tooltip = tooltipInitialize(element);
+                tooltip.enable();
             }
         });
 
     }
+
+
 
     const toaster = document.getElementById("toast");
 
